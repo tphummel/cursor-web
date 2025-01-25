@@ -1,0 +1,16 @@
+.
+├── Dockerfile
+├── docker-compose.yml
+├── package.json
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+└── src/
+    ├── index.js
+    ├── config.js
+    ├── server.js
+    ├── smtp-dev.js
+    └── routes/
+        ├── hello.js
+        ├── hello.test.unit.js
+        └── hello.test.integration.js 

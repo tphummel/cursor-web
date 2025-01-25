@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    container_name: webapp
+    ports:
+      - "8181:8181"
+    volumes:
+      - ./src:/app/code
+      - ./data:/app/data
+    environment:
+      - APP_PORT=8181
+      - NODE_ENV=development
+    command: npm run dev
+
+  smtp:
+    build: .
+    container_name: smtp-dev
+    command: node src/smtp-dev.js
+    ports:
+      - "2525:2525"
+    tty: true
+    stdin_open: true 

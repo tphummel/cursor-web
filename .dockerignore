@@ -1,0 +1,49 @@
+# Version control
+.git
+.gitignore
+
+# Dependencies
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# Development/IDE files
+.editorconfig
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test files
+**/*.test.unit.js
+**/*.test.integration.js
+
+# Documentation
+*.md
+LICENSE
+
+# Docker files
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+data/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db 

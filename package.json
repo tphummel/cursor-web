@@ -1,0 +1,23 @@
+{
+  "name": "web-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "node src/**/*.test.unit.js && node src/**/*.test.integration.js",
+    "test:unit": "node src/**/*.test.unit.js",
+    "test:integration": "node src/**/*.test.integration.js",
+    "lint": "standard"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.0",
+    "run-series": "^1.1.9",
+    "run-waterfall": "^1.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3",
+    "simple-get": "^4.0.1",
+    "standard": "^17.1.0"
+  }
+} 
