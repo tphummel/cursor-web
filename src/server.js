@@ -1,5 +1,4 @@
 const http = require('http')
-const config = require('./config')
 
 function createServer (routes) {
   const server = http.createServer((req, res) => {
@@ -18,4 +17,4 @@ function createServer (routes) {
   return server
 }
 
-module.exports = createServer 
+module.exports = createServer

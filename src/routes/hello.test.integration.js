@@ -22,7 +22,7 @@ function getJson (url, cb) {
   get.concat({
     url,
     headers: {
-      'Accept': 'application/json'
+      Accept: 'application/json'
     }
   }, (err, res, data) => {
     if (err) return cb(err)
@@ -89,4 +89,4 @@ series([
     process.exit(1)
   }
   console.log('All tests passed!')
-}) 
+})

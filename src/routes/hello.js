@@ -9,4 +9,4 @@ function helloRoute (req, res) {
   res.end(JSON.stringify(response))
 }
 
-module.exports = helloRoute 
+module.exports = helloRoute

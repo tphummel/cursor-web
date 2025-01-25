@@ -29,4 +29,4 @@ function createDevSmtp (port, cb) {
   return server
 }
 
-module.exports = createDevSmtp 
+module.exports = createDevSmtp
