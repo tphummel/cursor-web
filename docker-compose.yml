@@ -1,6 +1,8 @@
 services:
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     container_name: webapp
     ports:
       - "8181:8181"
@@ -18,7 +20,9 @@ services:
     restart: unless-stopped
 
   smtp:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     container_name: smtp-dev
     command: node src/smtp-dev.js
     ports:

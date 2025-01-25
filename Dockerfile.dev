@@ -1,0 +1,10 @@
+# Development Dockerfile - includes dev dependencies and tools
+FROM node:20-alpine
+WORKDIR /app
+ENV PATH /usr/local/bin:$PATH
+COPY package*.json ./
+RUN npm ci
+COPY src ./src
+ENV NODE_ENV=development
+EXPOSE 8181
+CMD ["npm", "run", "dev"] 

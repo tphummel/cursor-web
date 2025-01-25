@@ -1,9 +1,13 @@
-FROM node:20-alpine
+# Production Dockerfile - optimized for size
+FROM node:20-alpine AS builder
 WORKDIR /app
-ENV PATH /usr/local/bin:$PATH
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --production
 
+FROM alpine:3.19
+RUN apk add --no-cache nodejs
+WORKDIR /app
+COPY --from=builder /app/node_modules ./node_modules
 COPY src ./src
 ENV NODE_ENV=production
 ARG BUILD_DATE
