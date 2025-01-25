@@ -45,4 +45,7 @@ runTest('hello route returns valid json with status and timestamp', () => {
   const data = JSON.parse(res.data)
   assert.strictEqual(data.status, 'ok')
   assert.ok(new Date(data.ts).getTime() > 0) // Valid timestamp
+  assert.ok(data.build)
+  assert.ok(typeof data.build.date === 'string')
+  assert.ok(typeof data.build.gitSha === 'string')
 })

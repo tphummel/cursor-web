@@ -12,6 +12,7 @@ COPY src ./src
 ENV NODE_ENV=production
 ARG BUILD_DATE
 ARG GIT_SHA
+RUN echo '{"date":"'${BUILD_DATE}'","gitSha":"'${GIT_SHA}'"}' > /app/build-info.json
 LABEL org.opencontainers.image.created="${BUILD_DATE}"
 LABEL org.opencontainers.image.revision="${GIT_SHA}"
 EXPOSE 8181

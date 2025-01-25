@@ -55,6 +55,9 @@ series([
               assert.strictEqual(typeof body, 'object')
               assert.strictEqual(body.status, 'ok')
               assert.ok(new Date(body.ts).getTime() > 0)
+              assert.ok(body.build)
+              assert.ok(typeof body.build.date === 'string')
+              assert.ok(typeof body.build.gitSha === 'string')
               done()
             } catch (err) {
               done(err)
