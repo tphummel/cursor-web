@@ -5,10 +5,12 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "pretest": "npm run lint",
     "test": "node src/**/*.test.unit.js && node src/**/*.test.integration.js",
     "test:unit": "node src/**/*.test.unit.js",
-    "test:integration": "node src/**/*.test.integration.js",
-    "lint": "standard"
+    "test:integration": "node src/**/*.test.integration.js"
   },
   "dependencies": {
     "better-sqlite3": "^9.4.0",
