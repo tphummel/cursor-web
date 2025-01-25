@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
+    "dev": "nodemon --exec 'npm test && node src/index.js' --watch src",
     "lint": "standard",
     "lint:fix": "standard --fix",
     "pretest": "npm run lint",

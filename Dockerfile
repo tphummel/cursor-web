@@ -1,12 +1,9 @@
-FROM node:20-alpine AS builder
+FROM node:20-alpine
 WORKDIR /app
+ENV PATH /usr/local/bin:$PATH
 COPY package*.json ./
-RUN npm ci --production
+RUN npm ci
 
-FROM alpine:3.19
-RUN apk add --no-cache nodejs
-WORKDIR /app
-COPY --from=builder /app/node_modules ./node_modules
 COPY src ./src
 ENV NODE_ENV=production
 ARG BUILD_DATE

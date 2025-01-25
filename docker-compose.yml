@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   app:
     build: .
@@ -6,12 +5,17 @@ services:
     ports:
       - "8181:8181"
     volumes:
-      - ./src:/app/code
-      - ./data:/app/data
+      - ./src:/app/src
+      - ./package.json:/app/package.json
+      - ./package-lock.json:/app/package-lock.json
+      # Don't sync node_modules from host
+      - /app/node_modules
     environment:
       - APP_PORT=8181
       - NODE_ENV=development
     command: npm run dev
+    # Keep container running if nodemon crashes
+    restart: unless-stopped
 
   smtp:
     build: .
@@ -19,5 +23,7 @@ services:
     command: node src/smtp-dev.js
     ports:
       - "2525:2525"
+    volumes:
+      - ./src:/app/src
     tty: true
     stdin_open: true 
